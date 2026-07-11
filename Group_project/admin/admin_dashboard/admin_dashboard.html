@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="admin_dashboard.css">
+
+</head>
+<body>
+
+    <iframe
+        src="../../components/sidebar/sidebar.html"
+        class="sidebar-frame"
+        frameborder="0">
+    </iframe>
+
+    <main class="main-content">
+
+        <header class="topbar">
+    
+            <div class="page-title">
+                <h1 id="greeting">Welcome, Admin!</h1>
+                
+            </div>
+    
+            <div class="top-right">
+    
+                
+    
+                <div class="date-box">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="currentDate"></span>
+                </div>
+                <div class="admin-info">
+    
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+    
+                    <div>
+                        <strong>System Administrator</strong>
+                        
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </header>
+    
+    
+        <!-- OPERATIONS AT A GLANCE -->
+    
+        <section class="hero-panel">
+    
+            <div class="hero-content">
+    
+                <div class="hero-title">
+                    <h2>Operations at a Glance</h2>
+                    <p>
+                        Real-time overview of policy and underwriter activity.
+                    </p>
+                </div>
+    
+                <div class="hero-stats">
+    
+                    <div class="hero-stat">
+                        <div class="circle-icon">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+    
+                        <div>
+                            <h3 id="policyCount">0</h3>
+                            <p>Total Policies</p>
+                        </div>
+                    </div>
+    
+                    <div class="hero-divider"></div>
+    
+                    <div class="hero-stat">
+                        <div class="circle-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+    
+                        <div>
+                            <h3 id="activePolicies">0</h3>
+                            <p>Active Policies</p>
+                        </div>
+                    </div>
+    
+                    <div class="hero-divider"></div>
+    
+                    <div class="hero-stat">
+                        <div class="circle-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+    
+                        <div>
+                            <h3 id="underwriterCount">0</h3>
+                            <p>Active Underwriters</p>
+                        </div>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+            <div class="sidebar-image">
+          <img src="../../assests/images/sidebar.png" alt="">  
+        </div>
+    
+        </section>
+        <section class="company-strip">
+
+            <div class="company-mini">
+                <i class="fa-solid fa-car"></i>
+                <span>2 Wheeler Insurance</span>
+            </div>
+        
+            <div class="company-mini">
+                <i class="fa-solid fa-car-side"></i>
+                <span>4 Wheeler Insurance</span>
+            </div>
+        
+            <div class="company-mini">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Trusted Vehicle Protection</span>
+            </div>
+        
+        </section>
+    
+        <!-- DASHBOARD GRID -->
+    
+        <section class="dashboard-grid">
+    
+            <div class="dashboard-card">
+    
+                <div class="card-heading">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <h3>Underwriter Performance</h3>
+                </div>
+    
+                <div id="underwriterGraph"
+                     class="underwriter-graph">
+                </div>
+    
+            </div>
+            
+            <div class="dashboard-card">
+
+                <div class="card-heading">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <h3>Premium Analytics</h3>
+                </div>
+
+                <div id="premiumAnalytics"></div>
+
+            </div>
+
+    
+            <div class="dashboard-card">
+    
+                <div class="card-heading">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <h3>Recent Activities</h3>
+                </div>
+    
+                <ul id="activityList"
+                    class="activity-timeline">
+                </ul>
+    
+            </div>
+    
+        </section>
+
+        
+    </main> 
+    
+    
+
+    <script src="admin_dashboard.js"></script>
+
+</body>
+</html>

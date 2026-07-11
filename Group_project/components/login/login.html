@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Secure portal to manage vehicle insurance policies, claims, and underwriters. Log in as an Administrator or Underwriter.">
+    <title>Login - Vehicle Insurance Management System</title>
+    <!-- Google Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <!-- Left Side: Branding and Visuals (35% width) -->
+        <section class="branding-side">
+            <!-- Decorative CSS Grid/Bubble shapes -->
+            <div class="decor-shape shape-1"></div>
+            <div class="decor-shape shape-2"></div>
+            <div class="decor-shape shape-3"></div>
+
+            <div class="branding-content">
+                <div class="logo-wrapper">
+                    <!-- Shield SVG Icon -->
+                    <img src="../../assests/images/logo.png" alt="Vehicle Insurance Logo" class="shield-logo">
+                    <div class="logo-text">
+                        <h2>Drive<span>Secure</span></h2>
+                        <p>Vehicle Insurance</p>
+                    </div>
+                </div>
+                <!-- <h1 class="branding-title">Vehicle Insurance System</h1> -->
+                <p class="branding-subtitle">Securing journeys, simplifying claims. <br> Enterprise-grade portal for
+                    administrators and underwriters.</p>
+
+                <div class="branding-footer">
+                    <span>Secure</span>
+                    <span class="divider">•</span>
+                    <span>Reliable</span>
+                    <span class="divider">•</span>
+                    <span>Trusted</span>
+                    <span class="divider">•</span>
+                    <span>v1.0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Side: Login Form (65% width) -->
+        <main class="form-side">
+            <div class="login-card-wrapper">
+                <!-- Welcome Headers -->
+                <header class="form-header">
+                    <h2 class="welcome-title">Welcome Back</h2>
+                    <p class="welcome-subtitle">Sign in to continue to your dashboard</p>
+                </header>
+
+                <!-- Custom Alert Banner -->
+                <div id="alert-banner" class="alert-banner hidden" role="alert">
+                    <span id="alert-icon" class="alert-icon"></span>
+                    <span id="alert-message" class="alert-message"></span>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" novalidate>
+                    <!-- Role Selection -->
+                    <div class="form-group">
+                        <label class="input-label">Select Your Role <span class="required">*</span></label>
+                        <div class="role-selector-container">
+                            <button type="button" class="role-card" data-role="Administrator" id="role-btn-admin">
+                                <span class="role-icon">
+                                    <!-- Administrator/Shield-User SVG Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                </span>
+                                <span class="role-text">Administrator</span>
+                            </button>
+
+                            <button type="button" class="role-card" data-role="Underwriter" id="role-btn-underwriter">
+                                <span class="role-icon">
+                                    <!-- Underwriter/Briefcase SVG Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                    </svg>
+                                </span>
+                                <span class="role-text">Underwriter</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- User ID Input -->
+                    <div class="form-group">
+                        <label for="username" class="input-label">User ID <span class="required">*</span></label>
+                        <div class="input-control-wrapper">
+                            <span class="input-prefix-icon">
+                                <!-- User SVG Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </span>
+                            <input type="text" id="username" class="form-input" placeholder="Enter your enterprise ID"
+                                autocomplete="username" required>
+                        </div>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="form-group">
+                        <div class="label-row">
+                            <label for="password" class="input-label">Password <span class="required">*</span></label>
+                        </div>
+                        <div class="input-control-wrapper">
+                            <span class="input-prefix-icon">
+                                <!-- Lock SVG Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                            </span>
+                            <input type="password" id="password" class="form-input" placeholder="Enter your password"
+                                autocomplete="current-password" required>
+                            <button type="button" id="toggle-password" class="password-toggle-btn"
+                                aria-label="Show password">
+                                <!-- Eye SVG Icon (Default: hidden password, show eye) -->
+                                <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <a href="#" id="forgot-password" class="forgot-link">Forgot Password?</a>
+                    </div>
+
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-btn" class="submit-btn">
+                        <span class="btn-text">Sign In</span>
+                        <span class="btn-spinner hidden"></span>
+                    </button>
+                </form>
+
+                <!-- Footer info / support links -->
+                <footer class="card-footer">
+                    <p class="footer-copyright">&copy; 2026 Vehicle Insurance Management System. All Rights Reserved.
+                    </p>
+                    <p class="footer-links">
+                        <a href="#" class="footer-link">Need Help?</a>
+                        <span class="footer-dot">•</span>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                    </p>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <div id="admin-popup" class="popup-overlay hidden">
+    <div class="popup-box">
+        <h2>Password Reset Restricted</h2>
+
+        <p>
+            Underwriters are not authorized to reset their passwords.
+        </p>
+
+        <p>
+            Please contact your System Administrator.
+        </p>
+
+        <p>
+            <strong>Email:</strong><br>
+            admin.support@drivesecure.com
+        </p>
+
+        <button id="close-popup">
+            Close
+        </button>
+    </div>
+</div>
+
+    <!-- Script File -->
+    <script src="login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #0F9D58;
+    --primary-hover: #0B7A43;
+    --secondary: #14B8A6;
+    --accent: #F4C430;
+
+    --background: #F7FCF8;
+    --card-bg: #FFFFFF;
+    --section-bg: #ECFDF5;
+
+    --text-dark: #0F172A;
+    --text: #475569;
+    --text-light: #64748B;
+
+    --border: #DCE7E2;
+
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Navbar */
+
+.top-navbar {
+    position: fixed;
+    top: 0;
+    left: 280px;
+
+    width: calc(100% - 280px);
+    height: 75px;
+
+
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+
+    z-index: 999;
+}
+
+.navbar-title h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.navbar-actions {
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+}
+
+/* Date Box */
+
+.date-box{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:10px 16px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    box-shadow:0 8px 24px rgba(15,157,88,.08);
+    min-width:220px;
+}
+
+.date-box i{
+    color:var(--primary);
+    font-size:18px;
+}
+
+.date-box span{
+    color:var(--heading);
+    font-weight:600;
+    font-size:14px;
+    line-height:1.4;
+}
+
+/* Profile */
+
+.profile-container {
+    position: relative;
+}
+
+.profile-btn{
+    border:none;
+    background:none;
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.profile-info{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.profile-info span{
+    color:var(--text-dark);
+    font-size:14px;
+    font-weight:500;
+}
+
+.profile-info i{
+    color:var(--text-light);
+    font-size:12px;
+}
+
+.profile-avatar {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 18px;
+
+    transition: 0.3s;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+
+    width: 260px;
+
+    background: white;
+
+    border-radius: 14px;
+    border: 1px solid var(--border);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition: all 0.25s ease;
+}
+
+.profile-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.profile-header {
+    padding: 18px;
+}
+
+.profile-label {
+    font-size: 12px;
+    color: var(--text-light);
+
+    margin-bottom: 5px;
+}
+
+.profile-header h4 {
+    color: var(--primary);
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.profile-header span {
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+.divider {
+    height: 1px;
+    background: var(--border);
+}
+
+.logout-btn {
+    width: 100%;
+
+    border: none;
+    background: none;
+
+    padding: 14px 18px;
+
+    cursor: pointer;
+    text-align: left;
+
+    color: var(--danger);
+    font-weight: 500;
+}
+
+.logout-btn:hover {
+    background: #FEF2F2;
+}
+
+.logout-btn i {
+    margin-right: 10px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 992px) {
+    .top-navbar {
+        left: 250px;
+        width: calc(100% - 250px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .top-navbar {
+        left: 0;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .navbar-title h2 {
+        font-size: 16px;
+    }
+
+    .date-box {
+        display: none;
+    }
+}

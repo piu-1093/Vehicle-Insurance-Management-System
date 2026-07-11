@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Vehicles by UnderWriter</title>
+    <link rel="stylesheet" href="view_vehicles.css">
+
+</head>
+<body>
+    <header class="header">
+       
+    </header>
+    <div class="container">
+        <div class="banner">
+            <h1> Your Protection, Our Priority</h1>
+           
+            <p>Trusted Insurance Solution for a Secure Tomorrow</p></div>
+            <div class="search-section">
+                <h2>View Vehicles by UnderWriter</h2>
+          
+            <div class="search-section">
+                <lebel>Enter UnderWriter ID</lebel>
+                <div class="search-box">
+                    <input
+                    type="text"
+                    id="underwriterId"
+                    placeholder="Enter UnderWriter ID">
+                    <button onclick="searchVehicle()">
+                        Search
+                    </button>
+                </div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th> Policy ID</th>
+                            <th> Vehicle No</th>
+                            <th> Customer</th>
+                            <th> Policy Type</th>
+                            <th> Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vehicleTable">
+                        <tr>
+                            <td colspan="5">
+Enter UnderWriter ID and click Search
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      <footer>
+        2026 Insurance Management System
+      </footer>
+        
+    </div>
+    <script src="view_vehicles.js"> </script>
+</body>
+</html>

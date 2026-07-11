@@ -1,0 +1,197 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete UnderWriter</title>
+
+    <link rel="stylesheet" href="delete_underwriter.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <iframe
+        src="../../components/sidebar/sidebar.html"
+        class="sidebar-frame"
+        frameborder="0">
+    </iframe>
+    <iframe
+        src="../../components/navbar/navbar.html"
+        
+        class="navbar-frame"
+        frameborder="0">
+        </iframe>
+
+    <!-- Main Content -->
+    <div class="content">
+
+        <div class="page-header">
+            <div>
+                <h1>Delete UnderWriter</h1>
+                <p>Home &gt; Delete UnderWriter</p>
+            </div>
+        </div>
+
+        <div class="delete-card">
+
+            <!-- Warning -->
+            <div class="warning-box">
+                <div class="warning-icon">⚠</div>
+
+                <div>
+                    <h3>Delete UnderWriter</h3>
+                    <p>
+                        Search an UnderWriter by ID, verify the details,
+                        and then delete the record.
+                        This action cannot be undone.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form id="deleteForm">
+
+                <!-- Search -->
+                <div class="form-group">
+
+                    <label for="underwriterId">UnderWriter ID</label>
+
+                    <div class="search-row">
+
+                       <input
+                            type="text"
+                            id="underwriterId"
+                            placeholder="Enter UnderWriter ID"
+                            inputmode="numeric"
+                            pattern="[0-9]*">
+
+                        <button
+                            type="button"
+                            class="search-btn"
+                            onclick="searchUnderwriter()">
+
+                            Search
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- UnderWriter Details -->
+                <div
+                    id="underwriterDetails"
+                    class="details-card"
+                    style="display:none;">
+
+                    <h3>UnderWriter Details</h3>
+
+                    <table>
+
+                        <tr>
+                            <td><strong>ID</strong></td>
+                            <td id="uwId"></td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Name</strong></td>
+                            <td id="uwName"></td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Date of Birth</strong></td>
+                            <td id="uwDob"></td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Joining Date</strong></td>
+                            <td id="uwJoiningDate"></td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+                <!-- Buttons -->
+                <div class="button-group">
+
+                    <button
+                        type="submit"
+                        class="delete-btn">
+
+                        🗑 Delete
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="back-btn"
+                        onclick="goBack()">
+
+                        ← Back
+
+                    </button>
+
+                </div>
+
+            </form>
+
+            <!-- Info -->
+            <div class="info-box">
+                 Please verify the UnderWriter details before deleting the record.
+            </div>
+
+        </div>
+        <div id="customModal" class="modal-overlay">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <h3 id="modalTitle">Message</h3>
+        </div>
+
+        <div class="modal-body">
+            <p id="modalMessage"></p>
+        </div>
+
+        <div class="modal-footer">
+
+            <button
+                id="modalCancel"
+                class="cancel-btn">
+                Cancel
+            </button>
+
+            <button
+                id="modalOk"
+                class="ok-btn">
+                OK
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
+<!-- JavaScript -->
+<script src="delete_underwriter.js"></script>
+
+</body>
+</html>

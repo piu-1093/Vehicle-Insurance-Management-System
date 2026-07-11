@@ -1,0 +1,788 @@
+/* -------------------------------------------------------------
+ * VEHICLE INSURANCE MANAGEMENT SYSTEM - LOGIN MODULE STYLING
+ * Enterprise UI/UX Design System
+ * ------------------------------------------------------------- */
+
+/* Define Design Tokens & Variables */
+:root {
+    /* Color Palette from Image */
+    --primary: #0F9D58;             /* Deep Emerald Green */
+    --primary-hover: #0B7A43;       /* Dark Emerald */
+    --secondary: #14B8A6;           /* Teal Green */
+    --accent: #F4C430;              /* Golden Yellow */
+    --background: #F7FCF8;          /* Mint White */
+    --card-bg: #FFFFFF;             /* Pure White */
+    --section-bg: #ECFDF5;          /* Soft Mint */
+    --text-dark: #0F172A;           /* Navy Blue */
+    --text: #475569;                /* Slate Gray */
+    --text-light: #64748B;          /* Gray */
+    --border: #DCE7E2;              /* Light Gray */
+    --success: #22C55E;             /* Green */
+    --warning: #F59E0B;             /* Amber */
+    --danger: #EF4444;              /* Red */
+    --white: #FFFFFF;
+
+    /* Semantic Mapped Variables */
+    --primary-color: var(--primary);
+    --secondary-color: var(--primary);
+    --bg-color: var(--background);
+    --text-primary: var(--text-dark);
+    --text-secondary: var(--text);
+    --text-muted: var(--text-light);
+    --border-color: var(--border);
+    --success-color: var(--success);
+    --error-color: var(--danger);
+    --hover-color: var(--primary-hover);
+    --input-focus-ring: rgba(15, 157, 88, 0.15);
+    
+    /* Gradients */
+    --primary-gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    --overlay-gradient: linear-gradient(180deg, rgba(15, 157, 88, 0.8) 0%, rgba(20, 184, 166, 0.9) 100%);
+
+    /* Fonts & Typography */
+    --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+    --shadow-card: 0 20px 40px -15px rgba(15, 23, 42, 0.05);
+
+    /* Borders */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    overflow-x: hidden;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Main Layout Wrapper */
+.login-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* =============================================================
+ * LEFT SIDE: BRANDING SIDEBAR (35% Width)
+ * ============================================================= */
+.branding-side {
+    position: relative;
+    width: 35%;
+    background: var(--primary-gradient);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 3rem 2rem;
+    overflow: hidden;
+    color: var(--white);
+    z-index: 1;
+}
+
+/* Subtle CSS Abstract Decorative Shapes */
+.decor-shape {
+    position: absolute;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.03);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.shape-1 {
+    width: 350px;
+    height: 350px;
+    top: -100px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 70%);
+}
+
+.shape-2 {
+    width: 450px;
+    height: 450px;
+    bottom: -150px;
+    right: -150px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
+}
+
+.shape-3 {
+    width: 250px;
+    height: 250px;
+    top: 30%;
+    right: -50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Branding Content Elements */
+.branding-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+}
+
+.logo-text {
+    margin-left: 1rem;
+}
+
+.logo-text h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: -0.01em;
+}
+
+.logo-text h2 span {
+    color: var(--accent);
+}
+
+.logo-text p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 0.25rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.forgot-link {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    margin-left: 75%;
+}
+
+.forgot-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.shield-logo {
+    width: 64px;
+    height: 64px;
+    color: var(--white);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+    animation: pulseLogo 3s ease-in-out infinite alternate;
+}
+
+.branding-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.025em;
+    background: linear-gradient(to right, #ffffff, #e0e7ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.branding-subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #E2E8F0;
+    line-height: 1.6;
+    max-width: 90%;
+    margin-bottom: auto;
+}
+
+.branding-footer {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+    margin-top: auto;
+}
+
+.branding-footer .divider {
+    margin: 0 0.5rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* =============================================================
+ * RIGHT SIDE: LOGIN FORM PORTAL (65% Width)
+ * ============================================================= */
+.form-side {
+    width: 65%;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+}
+
+.login-card-wrapper {
+    width: 100%;
+    max-width: 580px;
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
+    padding: 2.85rem 2.75rem 2rem;
+    animation: cardFadeIn 0.5s var(--transition-normal);
+}
+
+/* Header Text */
+.form-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+}
+
+.welcome-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* Inputs Form Elements */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.input-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    transition: var(--transition-fast);
+}
+
+.required {
+    color: var(--error-color);
+}
+
+/* =============================================================
+ * CUSTOM ROLE SELECTOR CARDS
+ * ============================================================= */
+.role-selector-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.role-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem;
+    background-color: var(--white);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all var(--transition-normal);
+    outline: none;
+}
+
+.role-card:hover {
+    border-color: var(--secondary-color);
+    background-color: rgba(37, 99, 235, 0.02);
+    color: var(--primary-color);
+}
+
+.role-card:focus-visible {
+    box-shadow: 0 0 0 3px var(--input-focus-ring);
+}
+
+/* Role selected state active class */
+.role-card.active {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    transform: translateY(-1px);
+}
+
+.role-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-fast);
+}
+
+.role-card.active .role-icon {
+    transform: scale(1.1);
+}
+
+/* =============================================================
+ * INPUT FIELDS STYLING
+ * ============================================================= */
+.input-control-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    background-color: var(--white);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: all var(--transition-normal);
+}
+
+/* Input placeholder text */
+.form-input::placeholder {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Focus styles */
+.form-input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px var(--input-focus-ring);
+}
+
+/* Prefix Icons placement */
+.input-prefix-icon {
+    position: absolute;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary);
+    pointer-events: none;
+    transition: color var(--transition-fast);
+}
+
+.form-input:focus + .input-prefix-icon,
+.input-control-wrapper:focus-within .input-prefix-icon {
+    color: var(--secondary-color);
+}
+
+/* =============================================================
+ * PASSWORD VISIBILITY TOGGLE BUTTON
+ * ============================================================= */
+.password-toggle-btn {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    outline: none;
+}
+
+.password-toggle-btn:hover {
+    color: var(--primary-color);
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.password-toggle-btn:focus-visible {
+    box-shadow: 0 0 0 2px var(--input-focus-ring);
+}
+
+/* =============================================================
+ * SUBMIT BUTTON STYLING
+ * ============================================================= */
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    outline: none;
+}
+
+.submit-btn:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+    transform: translateY(-1px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:focus-visible {
+    box-shadow: 0 0 0 4px var(--input-focus-ring);
+}
+
+.submit-btn:disabled {
+    background-color: var(--text-muted);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Spinner for Loading State */
+.btn-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--white);
+    animation: spin 0.8s linear infinite;
+}
+
+/* =============================================================
+ * SLEEK ALERT BANNER FOR FEEDBACK
+ * ============================================================= */
+.alert-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.25rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.75rem;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    transition: all var(--transition-normal);
+}
+
+/* Dynamic Alert Themes */
+.alert-banner.error {
+    background-color: #FEF2F2;
+    border: 1px solid #FEE2E2;
+    color: var(--error-color);
+}
+
+.alert-banner.success {
+    background-color: #ECFDF5;
+    border: 1px solid #D1FAE5;
+    color: var(--success-color);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Banner icons styling */
+.alert-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* =============================================================
+ * FOOTER STYLING
+ * ============================================================= */
+.card-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.footer-copyright {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+}
+
+.footer-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.footer-dot {
+    color: var(--text-muted);
+}
+
+/* =============================================================
+ * KEYFRAMES AND ANIMATIONS
+ * ============================================================= */
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseLogo {
+    from {
+        transform: scale(1);
+        filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.1));
+    }
+    to {
+        transform: scale(1.04);
+        filter: drop-shadow(0 6px 18px rgba(255, 255, 255, 0.25));
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =============================================================
+ * RESPONSIVE MEDIA QUERIES
+ * ============================================================= */
+
+/* Large Tablets & Small Laptops (up to 1024px) */
+@media (max-width: 1024px) {
+    .branding-side {
+        width: 40%;
+        padding: 3rem 2rem;
+    }
+    .form-side {
+        width: 60%;
+        padding: 2.5rem 1.5rem;
+    }
+    .branding-title {
+        font-size: 1.85rem;
+    }
+}
+
+/* Tablets (up to 768px) */
+@media (max-width: 768px) {
+    body {
+        background-color: var(--white);
+    }
+    .login-container {
+        flex-direction: column;
+    }
+    /* Move branding side to the top and shrink it */
+    .branding-side {
+        width: 100%;
+        min-height: auto;
+        padding: 2.5rem 2rem;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+    }
+    .branding-content {
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .logo-wrapper {
+        margin-bottom: 0.5rem;
+    }
+    .shield-logo {
+        width: 48px;
+        height: 48px;
+    }
+    .branding-title {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+    .branding-subtitle {
+        font-size: 0.9rem;
+        max-width: 80%;
+        margin-bottom: 0;
+    }
+    .branding-footer {
+        display: none; /* Hide footer of branding on smaller screens */
+    }
+    .form-side {
+        width: 100%;
+        padding: 2.5rem 1.25rem 4rem;
+        align-items: flex-start;
+    }
+    .login-card-wrapper {
+        box-shadow: none;
+        border: none;
+        padding: 1rem 0.5rem;
+    }
+}
+
+/* Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+    .branding-side {
+        padding: 2rem 1.25rem;
+    }
+    .branding-title {
+        font-size: 1.4rem;
+    }
+    .branding-subtitle {
+        font-size: 0.85rem;
+        max-width: 100%;
+    }
+    .welcome-title {
+        font-size: 1.55rem;
+    }
+    .welcome-subtitle {
+        font-size: 0.85rem;
+    }
+    .role-selector-container {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .role-card {
+        padding: 0.75rem 1rem;
+    }
+    .form-input {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem 0.75rem 2.5rem;
+    }
+    .input-prefix-icon {
+        left: 0.85rem;
+    }
+    .login-card-wrapper {
+        padding: 0.5rem 0;
+    }
+}
+
+/* ===========================
+   PASSWORD RESET POPUP
+=========================== */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-overlay.hidden {
+    display: none;
+}
+
+.popup-box {
+    width: 420px;
+    max-width: 90%;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    animation: popupAnimation 0.25s ease;
+}
+
+.popup-box h2 {
+    color: #1E293B;
+    margin-bottom: 18px;
+    font-size: 24px;
+}
+
+.popup-box p {
+    color: #64748B;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.popup-box strong {
+    color: #1E293B;
+}
+
+#close-popup {
+    margin-top: 15px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    background: #22C55E;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#close-popup:hover {
+    background: #16A34A;
+}
+
+@keyframes popupAnimation {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

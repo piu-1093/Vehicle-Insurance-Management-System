@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renew Vehicle Insurance Policy</title>
+    <link rel="stylesheet" href="renew_policy.css">
+</head>
+<body>
+
+    <main class="container">
+        <iframe
+        src="../../components/sidebar_underwriter/sidebar_underwriter.html"
+        
+        class="sidebar-frame"
+        frameborder="0">
+        </iframe>
+        <iframe
+        src="../../components/navbar/navbar.html"
+        
+        class="navbar-frame"
+        frameborder="0">
+        </iframe>
+        <div class="page-header">
+            <h1>Renew Vehicle Insurance Policy</h1>
+            <p>Search and renew an existing insurance policy</p>
+        </div>
+
+        <div class="card">
+
+            <!-- Search Section -->
+            <div class="form-group">
+                <label for="policyId">Policy ID</label>
+                <input
+                    type="text"
+                    id="policyId"
+                    placeholder="Enter Policy ID">
+                <small class="error" id="policyIdError"></small>
+            </div>
+
+            <div class="search-container">
+                <button type="button" id="searchBtn" class="btn-primary">
+                    Search
+                </button>
+            </div>
+
+            
+            <div id="policySection" class="hidden">
+
+                <h2 class="section-title">Policy Details</h2>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Policy Number</label>
+                        <input type="text" id="policyNumber" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Customer Name</label>
+                        <input type="text" id="customerName" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Vehicle Type</label>
+                        <input type="text" id="vehicleType" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Insurance Type</label>
+                        <input type="text" id="insuranceType" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Current Premium</label>
+                        <input type="text" id="currentPremium" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Current From Date</label>
+                        <input type="text" id="currentFromDate" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Current To Date</label>
+                        <input type="text" id="currentToDate" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPremium">New Premium Amount</label>
+                        <input
+                            type="text"
+                            id="newPremium"
+                            placeholder="New Premium Amount" readonly>
+                        <small class="error" id="premiumError"></small>
+                    </div>
+
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="renewBtn" class="btn-primary">
+                        Renew Policy
+                    </button>
+
+                    <button type="reset" id="resetBtn" class="btn-secondary">
+                        Reset
+                    </button>
+
+                    <button type="button" id="backBtn" class="btn-back">
+                        Back
+                    </button>
+                </div>
+
+                <div id="successMessage" class="success-message"></div>
+
+            </div>
+
+        </div>
+    </main>
+
+   <script src="renew_policy.js"></script>
+
+</body>
+</html>

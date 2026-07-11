@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+
+    <link rel="stylesheet" href="navbar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?ns:wght@300;400;500;600;700&display=swap">
+</head>
+
+<body>
+
+    <nav class="top-navbar">
+
+
+
+        <div class="navbar-actions">
+
+            <div class="date-box">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="currentDate"></span>
+            </div>
+
+            <div class="profile-container">
+
+                <button id="profileBtn" class="profile-btn">
+
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="profile-info">
+                        <span id="navUsername">User</span>
+                       
+                    </div>
+
+                </button>
+
+                <div id="profileDropdown" class="profile-dropdown">
+
+                    <div class="profile-header">
+                        <p class="profile-label">Logged In User</p>
+
+                        <h4 id="usernameDisplay">Administrator</h4>
+
+                        <span id="roleDisplay">Administrator</span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <button id="logoutBtn" class="logout-btn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <script src="navbar.js"></script>
+
+</body>
+
+</html>

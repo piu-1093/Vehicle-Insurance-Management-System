@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnderWriter Dashboard</title>
+
+    <link rel="stylesheet" href="underwriter_dashboard.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <iframe src="../../components/sidebar_underwriter/sidebar_underwriter.html" class="sidebar-frame"
+            frameborder="0">
+        </iframe>
+
+        <main class="main-content">
+
+
+            <div class="dashboard-header">
+
+                <div>
+
+                    <h1>UnderWriter Dashboard</h1>
+
+                    <p>Real-time overview of your insurance policies</p>
+
+                </div>
+
+                <div class="welcome-card">
+
+                    <div class="welcome-icon">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3 id="welcomeUser">Welcome User</h3>
+
+                        <p id="date"></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Overview Banner -->
+
+            <div class="overview-banner">
+
+                <div class="banner-content">
+
+                    <h2>Operations at a Glance</h2>
+
+                    <p>Real-time overview of policy activity.</p>
+
+                    <div class="overview-grid">
+
+                        <div class="overview-item">
+
+                            <i class="fa-solid fa-file-circle-check"></i>
+
+                            <div>
+
+                                <h3 id="totalPolicies">0</h3>
+
+                                <span>Total Policies</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="overview-item">
+
+                            <i class="fa-solid fa-shield"></i>
+
+                            <div>
+
+                                <h3 id="activePolicies">0</h3>
+
+                                <span>Active Policies</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="overview-item">
+
+                            <i class="fa-solid fa-rotate"></i>
+
+                            <div>
+
+                                <h3 id="renewalsDue">0</h3>
+
+                                <span>Renewals Due</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="overview-item">
+
+                            <i class="fa-solid fa-file-circle-plus"></i>
+
+                            <div>
+
+                                <h3 id="policiesToday">0</h3>
+
+                                <span>Created Today</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="banner-image">
+
+                    <i class="fa-solid fa-car-side"></i>
+
+                </div>
+
+            </div>
+
+            <!-- Summary -->
+
+            <div class="vehicle-summary">
+
+                <div class="summary-card">
+
+                    <i class="fa-solid fa-motorcycle"></i>
+
+                    <span>2 Wheeler Insurance</span>
+
+                    <strong id="bikePolicies">0</strong>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <i class="fa-solid fa-car"></i>
+
+                    <span>4 Wheeler Insurance</span>
+
+                    <strong id="carPolicies">0</strong>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                    <span>Trusted Vehicle Protection</span>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom Row -->
+
+            <div class="chart-grid">
+
+                <!-- Vehicle Distribution -->
+
+                <div class="dashboard-card">
+
+                    <h2>
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                        Vehicle Type Distribution
+
+                    </h2>
+
+                    <div class="chart-container">
+                        <canvas id="vehicleChart"></canvas>
+                    </div>
+
+                    <div class="chart-details">
+
+                        <p>2 Wheeler <span id="bikeCount">0</span></p>
+
+                        <p>4 Wheeler <span id="carCount">0</span></p>
+
+                        <p>Total <span id="distributionTotal">0</span></p>
+
+                    </div>
+
+                </div>
+
+                <!-- Insurance Distribution -->
+
+                <div class="dashboard-card">
+
+                    <h2>
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                        Insurance Type Distribution
+
+                    </h2>
+
+                    <div class="chart-container">
+                        <canvas id="insuranceChart"></canvas>
+                    </div>
+
+                    <div class="chart-details">
+
+                        <p>Full Insurance <span id="fullCount">0</span></p>
+
+                        <p>Third Party <span id="thirdCount">0</span></p>
+
+                        <p>Total <span id="insuranceTotal">0</span></p>
+
+                    </div>
+
+                </div>
+
+                <!-- Recent Activities -->
+
+                <div class="dashboard-card">
+
+                    <h2>
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                        Recent Activities
+
+                    </h2>
+
+                    <ul id="recentActivities">
+
+                        <li class="empty">No Policies Available</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="underwriter_dashboard.js"></script>
+    
+
+</body>
+
+</html>

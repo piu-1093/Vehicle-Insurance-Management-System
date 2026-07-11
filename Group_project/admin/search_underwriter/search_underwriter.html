@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search UnderWriter</title>
+        <link rel="stylesheet" href="search_underwriter.css">
+    </head>
+
+    <body>
+
+        <iframe
+        src="../../components/sidebar/sidebar.html"
+        
+        class="sidebar-frame"
+        frameborder="0">
+        </iframe>
+        <iframe
+        src="../../components/navbar/navbar.html"
+        
+        class="navbar-frame"
+        frameborder="0">
+        </iframe>
+
+        
+        <div class="main-content">
+
+            
+
+            <!--Breadcrumb-->
+            <div class="page-header">
+
+                <div class="page-info">
+                    <h1>Search UnderWriter</h1>
+
+                    <div class="breadcrumb">
+                        Home > Search UnderWriter
+                    </div>
+                </div>
+
+               
+
+            </div>
+
+            <!--Main Form Card-->
+            <div class="container">
+
+                <label for="underwriterId">
+                    UnderWriter ID
+                </label>
+
+                <input
+                    type="text"
+                    id="underwriterId"
+                    placeholder="Enter UnderWriter ID (e.g., UW1001)"
+                >
+
+                <button
+                    onclick="searchUnderWriter()"
+                    class="search-btn">
+                     Search
+                </button>
+
+                <div id="resultCard"></div>
+
+                <div class="button-group">
+
+                    <button class="back-btn"
+                    onclick="window.location.href='../admin_dashboard/admin_dashboard.html'">
+                        ⬅ Back
+                    </button>
+
+                </div>
+
+            </div>
+
+            
+
+        </div>
+
+        <div id="messageModal" class="modal">
+            <div class="modal-content">
+
+                <div id="modalHeader" class="modal-header">
+                    <h3 id="modalTitle">Message</h3>
+                </div>
+
+                <div class="modal-body">
+
+                    <p id="modalMessage"></p>
+
+                    <div class="modal-footer">
+                        <button class="modal-btn" onclick="closeModal()">
+                            OK
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <script src="search_underwriter.js"></script>
+
+    </body>
+</html>

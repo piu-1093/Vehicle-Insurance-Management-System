@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Underwriter</title>
+
+    <link rel="stylesheet" href="register_underwriter.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <iframe
+        src="../../components/sidebar/sidebar.html"
+        
+        class="sidebar-frame"
+        frameborder="0">
+    </iframe>
+    <iframe
+        src="../../components/navbar/navbar.html"
+        
+        class="navbar-frame"
+        frameborder="0">
+        </iframe>
+    <main class="main-content">
+
+        <div class="page-header">
+            <h1>Register Underwriter</h1>
+            <p>Create a new underwriter account</p>
+        </div>
+
+        <div class="form-container">
+
+            <form id="registerForm">
+
+                <div class="form-group">
+                    <label for="uwid">Underwriter ID</label>
+                    <input
+                        type="text"
+                        id="uwid"
+                        placeholder="Example: UW1001"
+                        required>
+                    <small class="error-text" id="uwidError"></small>
+                </div>
+            
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter Underwriter Name"
+                        required>
+                    <small class="error-text" id="nameError"></small>
+                </div>
+            
+                <div class="form-group">
+                    <label for="dob">Date Of Birth</label>
+                    <input
+                        type="date"
+                        id="dob"
+                        required>
+                    <small class="error-text" id="dobError"></small>
+                </div>
+            
+                <div class="form-group">
+                    <label for="joiningDate">Joining Date</label>
+                    <input
+                        type="date"
+                        id="joiningDate"
+                        required>
+                    <small class="error-text" id="joiningDateError"></small>
+                </div>
+            
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Minimum 10 characters with letters and numbers"
+                        required>
+                    <small class="error-text" id="passwordError"></small>
+                </div>
+            
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Re-enter Password"
+                        required>
+                    <small class="error-text" id="confirmPasswordError"></small>
+                </div>
+            
+                <div class="button-group">
+            
+                    <button type="submit" class="btn-register">
+                        Register Underwriter
+                    </button>
+            
+                    <button
+                        type="button"
+                        class="btn-back"
+                        id="backBtn">
+                        Back To Dashboard
+                    </button>
+            
+                </div>
+            
+            </form>
+            
+
+        </div>
+        <!-- Success Modal -->
+
+        <div id="successModal" class="success-modal">
+
+            <div class="success-content">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <h2>Registration Successful</h2>
+
+                <p>
+                    Underwriter has been registered successfully.
+                </p>
+
+                <button id="modalOkBtn">
+                    Continue
+                </button>
+
+            </div>
+
+        </div>
+    </main>
+
+    <script src="register_underwriter.js"></script>
+
+</body>
+</html>

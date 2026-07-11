@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Create Vehicle Insurance</title>
+    <link rel="stylesheet" href="create_vehicle_insurance.css">
+    <link rel="preconnect" href="https://fonts.googleapi.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapi.com/css2family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+
+<body>
+    <main class="content">
+        <iframe src="../../components/sidebar_underwriter/sidebar_underwriter.html" class="sidebar-frame"
+            frameborder="0">
+        </iframe>
+        <iframe
+        src="../../components/navbar/navbar.html"
+        
+        class="navbar-frame"
+        frameborder="0">
+        </iframe>
+        <div class="page-header">
+            <h1>Create Vehicle Insurance</h1>
+            <p>Register a new vehicle Insurance policy</p>
+        </div>
+        <div class="card">
+            <form id="insuranceForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="policyNo">Policy No</label>
+                        <input type="text" id="policyNo" placeholder="Enter Policy Number" minlength="10" maxlength="20"
+                            required>
+                        <small class="error">Policy Number is required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleNo">Vehicle No</label>
+                        <input type="text" id="vehicleNo" placeholder="Eg: KL07AB1234" maxlength="10" required>
+                        <small class="error"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleType">Vehicle Type</label>
+                        <select id="vehicleType" required>
+                            <option value="">Select Vehicle Type</option>
+                            <option value="2 Wheeler">2 Wheeler</option>
+                            <option value="4 Wheeler">4 Wheeler</option>
+                        </select>
+                        <small class="error"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerName">Customer Name</label>
+                        <input type="text" id="customerName" placeholder="Enter Customer Name" maxlength="50" required>
+                        <small class="error"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="engineNo">Engine No</label>
+                        <input type="text" id="engineNo" placeholder="Enter Engine Number" minlength="8" maxlength="17"
+                            required>
+                        <small class="error"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="chassisNo">Chassis No</label>
+                        <input type="text" id="chassisNo" placeholder="Enter Chassis Number" minlength="17"
+                            maxlength="17" required>
+                        <small class="error"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNo">Phone No</label>
+                        <input type="number" id="phoneNo" placeholder="Eg: 9876543210" maxlength="10" required>
+                        <small class="error"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="insuranceType">Insurance Type</label>
+                        <select id="insuranceType" required>
+                            <option value="">Select Insurance Type</option>
+                            <option value="Full Insurance">Full Insurance</option>
+                            <option value="Third Party">Third Party</option>
+                        </select>
+                        <small class="error"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="premium">Premium Amount</label>
+                        <input type="text" id="premium" placeholder="Auto Generated" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="fromDate">from Date</label>
+                        <input type="date" id="fromDate" readonly>
+                        <small class="error"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="toDate">To Date</label>
+                        <input type="text" id="toDate" placeholder="Auto Generated" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="underwriterId">Underwriter ID</label>
+                        <input type="text" id="underwriterId" placeholder="Eg: UW1001" readonly>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Create Policy</button>
+                    <button type="reset" class="btn-secondary">Reset</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="create_vehicle_insurance.js"></script>
+</body>
+
+</html>

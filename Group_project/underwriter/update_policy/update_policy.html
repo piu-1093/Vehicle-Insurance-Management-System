@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Policy Type</title>
+
+
+    <link rel="stylesheet" href="update_policy.css">
+
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+
+
+        <!-- Sidebar -->
+
+
+
+        <!-- Main Content -->
+
+
+        <div class="main-content">
+
+
+            <iframe src="../../components/sidebar_underwriter/sidebar_underwriter.html" class="sidebar-frame"
+                frameborder="0">
+            </iframe>
+            <iframe
+        src="../../components/navbar/navbar.html"
+        
+        class="navbar-frame"
+        frameborder="0">
+        </iframe>
+
+            <div class="content-wrapper">
+
+
+                <div class="main-card">
+
+
+                    <h1>Update Policy Type</h1>
+
+
+                    <!-- Search Section -->
+
+
+                    <div class="section">
+
+
+                        <label>Enter Policy ID</label>
+
+
+                        <input type="text" id="policyId" placeholder="Enter Policy ID">
+
+
+                        <button id="searchBtn">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+
+
+                    </div>
+
+
+                    <!-- Policy Details -->
+
+
+                    <div class="details-box">
+
+
+                        <h2>Policy Details</h2>
+
+                        <p id="statusMessage" class="status-message">
+                            Ready to Update
+                        </p>
+                        <div class="details-grid">
+
+
+                            <div>
+                                <label>Policy ID</label>
+                                <input id="displayPolicyId" readonly>
+                            </div>
+
+
+                            <div>
+                                <label>Vehicle Number</label>
+                                <input id="vehicleNumber" readonly>
+                            </div>
+
+
+                            <div>
+                                <label>Customer Name</label>
+                                <input id="customerName" readonly>
+                            </div>
+
+
+                            <div>
+                                <label>Vehicle Type</label>
+                                <input id="vehicleType" readonly>
+                            </div>
+
+
+                            <div>
+                                <label>Current Policy Type</label>
+                                <input id="policyType" readonly>
+                            </div>
+
+
+                            <div>
+                                <label>Premium</label>
+                                <input id="premium" readonly>
+                            </div>
+
+
+                            <div>
+                                <label>Policy Validity</label>
+                                <input id="validity" readonly>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- Change Policy -->
+
+
+                    <div class="change-section">
+
+
+                        <h2>Change Policy Type</h2>
+
+
+                        <div class="radio-group">
+
+
+                            <label>
+                                <input type="radio" name="newPolicy" value="Full Insurance">
+                                Full Insurance
+                            </label>
+
+
+                            <label>
+                                <input type="radio" name="newPolicy" value="3rd Party Insurance">
+                                3rd Party Insurance
+                            </label>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- Buttons -->
+
+
+                    <div class="button-group">
+
+
+                        <button class="update-btn" id="updateBtn">
+                            Update
+                        </button>
+
+
+                        <button class="reset-btn" id="resetBtn">
+                            Reset
+                        </button>
+
+
+                        <button class="back-btn" id="backBtn">
+                            Back
+                        </button>
+
+
+                    </div>
+
+
+                    <!-- Right Cards -->
+
+
+                    <div class="bottom-cards">
+
+
+                        <div class="info-card">
+
+
+                            <h3>Update Guidelines</h3>
+
+
+                            <ul>
+                                <li>Enter a valid policy ID</li>
+                                <li>Search before updating</li>
+                                <li>Only policy type can be changed</li>
+                                <li>Click update to save changes</li>
+                            </ul>
+
+
+                        </div>
+
+
+                        <div class="info-card">
+
+
+                            <h3>Update Status</h3>
+
+                            
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+    <script src="update_policy.js"></script>
+
+
+</body>
+
+</html>
