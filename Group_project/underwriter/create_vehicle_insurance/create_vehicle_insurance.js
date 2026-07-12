@@ -46,11 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
         underwriterIdInput.value =
             "Not Available";
     }
-    const today = new Date().toISOString().split("T")[0];
-    fromDate.min = today;
-    fromDate.value = today;
-    let expiryDate = new Date(today);
-    expiryDate.setDate(expiryDate.getDate() + 365);
+    const now = new Date();
+    const todayLocal = now.getFullYear() + "-" +
+        String(now.getMonth() + 1).padStart(2, "0") + "-" +
+        String(now.getDate()).padStart(2, "0");
+    fromDate.min = todayLocal;
+    fromDate.value = todayLocal;
+    let expiryDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 365);
     let day = String(expiryDate.getDate()).padStart(2, "0");
     let month = String(expiryDate.getMonth() + 1).padStart(2, "0");
     let year = expiryDate.getFullYear();
@@ -356,11 +358,14 @@ form.addEventListener(
         } else {
             showSuccess(insuranceType);
         }
-        const today = new Date().toISOString().split("T")[0];
+        const _now = new Date();
+        const todayLocal = _now.getFullYear() + "-" +
+            String(_now.getMonth() + 1).padStart(2, "0") + "-" +
+            String(_now.getDate()).padStart(2, "0");
         if (fromDate.value === "") {
             showError(fromDate, "From Date is required.");
             isValid = false;
-        } else if (fromDate.value < today) {
+        } else if (fromDate.value < todayLocal) {
             showError(fromDate, "From Date must be today or a future date.");
             isValid = false;
         } else {
@@ -450,12 +455,14 @@ form.addEventListener(
     function () {
         setTimeout(function () {
             premium.value = "";
-            const today = new Date().toISOString().split("T")[0];
-            fromDate.value = today;
-            fromDate.min = today;
+            const _resetNow = new Date();
+            const todayLocalReset = _resetNow.getFullYear() + "-" +
+                String(_resetNow.getMonth() + 1).padStart(2, "0") + "-" +
+                String(_resetNow.getDate()).padStart(2, "0");
+            fromDate.value = todayLocalReset;
+            fromDate.min = todayLocalReset;
 
-            let expiryDate = new Date(today);
-            expiryDate.setDate(expiryDate.getDate() + 365);
+            let expiryDate = new Date(_resetNow.getFullYear(), _resetNow.getMonth(), _resetNow.getDate() + 365);
             let expiryDay = String(expiryDate.getDate()).padStart(2, "0");
             let expiryMonth = String(expiryDate.getMonth() + 1).padStart(2, "0");
             let expiryYear = expiryDate.getFullYear();
