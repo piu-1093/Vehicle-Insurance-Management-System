@@ -1,3 +1,12 @@
+function convertToDDMMYYYY(dateStr) {
+    if (!dateStr) return "";
+    const parts = dateStr.split("-"); // [YYYY, MM, DD]
+    if (parts.length === 3) {
+        return `${parts[2]}-${parts[1]}-${parts[0]}`;
+    }
+    return dateStr;
+}
+
 const form = document.getElementById("insuranceForm");
 
 const policyNo = document.getElementById("policyNo");
@@ -39,14 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     const today = new Date().toISOString().split("T")[0];
     fromDate.min = today;
-    fromDate.max = today;
     fromDate.value = today;
     let expiryDate = new Date(today);
     expiryDate.setDate(expiryDate.getDate() + 365);
     let day = String(expiryDate.getDate()).padStart(2, "0");
     let month = String(expiryDate.getMonth() + 1).padStart(2, "0");
     let year = expiryDate.getFullYear();
-    toDate.value = `${day}-${month}-${year}`;
+    toDate.min = today;
+    toDate.value = `${year}-${month}-${day}`;
 
 });
 
@@ -160,7 +169,8 @@ fromDate.addEventListener(
                 date.getFullYear();
 
             toDate.value =
-                `${day}-${month}-${year}`;
+                `${year}-${month}-${day}`;
+            toDate.min = fromDate.value;
         }
         else {
             toDate.value = "";
@@ -374,14 +384,27 @@ form.addEventListener(
             showSuccess(insuranceType);
         }
         const today = new Date().toISOString().split("T")[0];
-        if (fromDate.value !== today) {
-            showError(
-                fromDate,
-                "From Date must be today's date."
-            );
+        if (fromDate.value === "") {
+            showError(fromDate, "From Date is required.");
+            isValid = false;
+        } else if (fromDate.value < today) {
+            showError(fromDate, "From Date must be today or a future date.");
             isValid = false;
         } else {
             showSuccess(fromDate);
+        }
+
+        if (toDate.value === "") {
+            showError(toDate, "To Date is required.");
+            isValid = false;
+        } else if (toDate.value < today) {
+            showError(toDate, "To Date must be today or a future date.");
+            isValid = false;
+        } else if (toDate.value < fromDate.value) {
+            showError(toDate, "To Date must be greater than or equal to From Date.");
+            isValid = false;
+        } else {
+            showSuccess(toDate);
         }
         if (!isValid) {
             return;
@@ -412,9 +435,9 @@ form.addEventListener(
             premium:
                 premium.value,
             fromDate:
-                fromDate.value,
+                convertToDDMMYYYY(fromDate.value),
             toDate:
-                toDate.value,
+                convertToDDMMYYYY(toDate.value),
             underwriterId:
                 underwriterIdInput.value,
 
@@ -467,7 +490,19 @@ form.addEventListener(
     function () {
         setTimeout(function () {
             premium.value = "";
-            toDate.value = "";
+            const today = new Date().toISOString().split("T")[0];
+            fromDate.value = today;
+            fromDate.min = today;
+
+            let expiryDate = new Date(today);
+            expiryDate.setDate(expiryDate.getDate() + 365);
+            let expiryDay = String(expiryDate.getDate()).padStart(2, "0");
+            let expiryMonth = String(expiryDate.getMonth() + 1).padStart(2, "0");
+            let expiryYear = expiryDate.getFullYear();
+
+            toDate.value = `${expiryYear}-${expiryMonth}-${expiryDay}`;
+            toDate.min = today;
+
             const errors =
                 document.querySelectorAll(
                     ".error"

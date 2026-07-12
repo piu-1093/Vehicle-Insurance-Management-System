@@ -1,3 +1,21 @@
+function displayUpdateStatus(policy) {
+    const statusContainer = document.getElementById("updateStatusDetails");
+    if (!statusContainer) return;
+
+    if (policy && policy.isUpdated) {
+        statusContainer.innerHTML = `
+            <div class="update-log">
+                <p><strong>Status:</strong> Policy Updated</p>
+                <p><strong>New Type:</strong> ${policy.insuranceType}</p>
+                <p><strong>Premium:</strong> ${policy.premium}</p>
+                <p class="update-time"><small>Updated on: ${policy.updatedAt || 'N/A'}</small></p>
+            </div>
+        `;
+    } else {
+        statusContainer.innerHTML = `<p style="color: var(--text-light); font-style: italic;">No Updates</p>`;
+    }
+}
+
 let currentPolicy = null;
 
 document.getElementById("searchBtn").addEventListener("click", () => {
@@ -83,7 +101,7 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     document.getElementById("validity").value =
         `${policy.fromDate} To ${policy.toDate}`;
 
-    
+    displayUpdateStatus(policy);
 
 });
 
@@ -144,6 +162,10 @@ document.getElementById("updateBtn").addEventListener("click", () => {
 
     policies[policyIndex].premium =
         "2500";
+
+    policies[policyIndex].isUpdated = true;
+    policies[policyIndex].updatedAt = new Date().toLocaleString();
+
     // Save Back To Local Storage
     localStorage.setItem(
         "policies",
@@ -167,11 +189,7 @@ document.getElementById("updateBtn").addEventListener("click", () => {
 
     status.style.color = "green";
 
-    status.textContent =
-        "Policy Updated Successfully";
-
-    status.style.color = "green";
-
+    displayUpdateStatus(currentPolicy);
 
 });
 
@@ -203,6 +221,8 @@ document.getElementById("resetBtn").addEventListener("click", () => {
 
     document.getElementById("statusMessage").style.color =
         "black";
+
+    displayUpdateStatus(null);
 
 });
 

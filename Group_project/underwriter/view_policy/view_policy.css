@@ -41,8 +41,7 @@ body {
 .main-content {
     display: flex;
     min-height: 100vh;
-   overflow-y: hidden;
-   margin-left: 30px;
+    overflow-x: hidden;
 }
 
 
@@ -59,16 +58,16 @@ body {
 .navbar-frame {
     position: fixed;
     top: 0;
-    left: 280px;
-    width: calc(100% - 280px);
+    left: 330px;
+    width: calc(100% - 330px);
     height: 75px;
     border: none;
     z-index: 999;
     background: white;
 }
 .container {
-    margin-left: 300px;
-    width: calc(100% - 260px);
+    margin-left: 330px;
+    width: calc(100% - 330px);
     padding: 30px;
     margin-top: 70px;
 }

@@ -62,8 +62,8 @@ body {
 .navbar-frame {
     position: fixed;
     top: 0;
-    left: 280px;
-    width: calc(100% - 280px);
+    left: 330px;
+    width: calc(100% - 330px);
     height: 75px;
     border: none;
     z-index: 999;
@@ -71,11 +71,10 @@ body {
 }
 
 .content-wrapper {
-    margin-left: 300px;
-    width: calc(100% - 260px);
+    margin-left: 330px;
+    width: calc(100% - 330px);
     padding: 30px;
     margin-top: 70px;
-    
 }
 
 
@@ -313,5 +312,32 @@ input:focus {
     .bottom-cards {
         grid-template-columns: 1fr;
     }
+}
+
+#updateStatusDetails {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.update-log {
+    background: var(--section-bg);
+    border: 1px dashed var(--primary);
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 5px;
+}
+
+.update-log p {
+    margin-bottom: 6px;
+}
+
+.update-log p:last-child {
+    margin-bottom: 0;
+}
+
+.update-time {
+    color: var(--text-light);
+    font-size: 12px;
 }
 
