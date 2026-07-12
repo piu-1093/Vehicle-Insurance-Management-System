@@ -54,8 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let day = String(expiryDate.getDate()).padStart(2, "0");
     let month = String(expiryDate.getMonth() + 1).padStart(2, "0");
     let year = expiryDate.getFullYear();
-    toDate.min = today;
-    toDate.value = `${year}-${month}-${day}`;
+    toDate.value = `${day}-${month}-${year}`;
 
 });
 
@@ -169,8 +168,7 @@ fromDate.addEventListener(
                 date.getFullYear();
 
             toDate.value =
-                `${year}-${month}-${day}`;
-            toDate.min = fromDate.value;
+                `${day}-${month}-${year}`;
         }
         else {
             toDate.value = "";
@@ -393,19 +391,6 @@ form.addEventListener(
         } else {
             showSuccess(fromDate);
         }
-
-        if (toDate.value === "") {
-            showError(toDate, "To Date is required.");
-            isValid = false;
-        } else if (toDate.value < today) {
-            showError(toDate, "To Date must be today or a future date.");
-            isValid = false;
-        } else if (toDate.value < fromDate.value) {
-            showError(toDate, "To Date must be greater than or equal to From Date.");
-            isValid = false;
-        } else {
-            showSuccess(toDate);
-        }
         if (!isValid) {
             return;
         }
@@ -437,7 +422,7 @@ form.addEventListener(
             fromDate:
                 convertToDDMMYYYY(fromDate.value),
             toDate:
-                convertToDDMMYYYY(toDate.value),
+                toDate.value,
             underwriterId:
                 underwriterIdInput.value,
 
@@ -500,8 +485,7 @@ form.addEventListener(
             let expiryMonth = String(expiryDate.getMonth() + 1).padStart(2, "0");
             let expiryYear = expiryDate.getFullYear();
 
-            toDate.value = `${expiryYear}-${expiryMonth}-${expiryDay}`;
-            toDate.min = today;
+            toDate.value = `${expiryDay}-${expiryMonth}-${expiryYear}`;
 
             const errors =
                 document.querySelectorAll(
