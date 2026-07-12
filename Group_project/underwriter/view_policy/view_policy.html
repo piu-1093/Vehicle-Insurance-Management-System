@@ -32,6 +32,30 @@
             <p>View All Available Policies</p>
         </div>
 
+        <div class="search-bar-container" style="margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
+            <input 
+                type="text" 
+                id="policySearchInput" 
+                placeholder="🔍 Search by Policy Number..." 
+                style="padding: 12px 20px; font-size: 15px; border: 1px solid var(--border); border-radius: 8px; width: 350px; outline: none; transition: 0.3s; background: white;"
+            >
+            <select 
+                id="vehicleTypeFilter" 
+                style="padding: 12px 20px; font-size: 15px; border: 1px solid var(--border); border-radius: 8px; outline: none; background: white; transition: 0.3s; cursor: pointer; color: var(--text);"
+            >
+                <option value="">All Vehicle Types</option>
+                <option value="2 Wheeler">2 Wheeler</option>
+                <option value="4 Wheeler">4 Wheeler</option>
+            </select>
+            <select 
+                id="insuranceTypeFilter" 
+                style="padding: 12px 20px; font-size: 15px; border: 1px solid var(--border); border-radius: 8px; outline: none; background: white; transition: 0.3s; cursor: pointer; color: var(--text);"
+            >
+                <option value="">All Insurance Types</option>
+                <option value="Full Insurance">Full Insurance</option>
+                <option value="Third Party">Third Party</option>
+            </select>
+        </div>
 
         <div class="table-container">
             <table id="policyTable">

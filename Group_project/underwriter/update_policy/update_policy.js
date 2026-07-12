@@ -160,8 +160,11 @@ document.getElementById("updateBtn").addEventListener("click", () => {
     policies[policyIndex].insuranceType =
         "3rd Party Insurance";
 
-    policies[policyIndex].premium =
-        "2500";
+    if (policies[policyIndex].vehicleType === "2 Wheeler") {
+        policies[policyIndex].premium = "2500";
+    } else {
+        policies[policyIndex].premium = "6500";
+    }
 
     policies[policyIndex].isUpdated = true;
     policies[policyIndex].updatedAt = new Date().toLocaleString();

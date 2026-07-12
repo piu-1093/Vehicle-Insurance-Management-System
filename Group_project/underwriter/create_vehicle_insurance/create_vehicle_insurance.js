@@ -93,36 +93,11 @@ function showSuccess(input) {
 
 
 function calculatePremium() {
-
-    if (
-        vehicleType.value === "2 Wheeler" &&
-        insuranceType.value === "Third Party"
-    ) {
+    if (vehicleType.value === "2 Wheeler") {
         premium.value = "2500";
-    }
-
-    else if (
-        vehicleType.value === "2 Wheeler" &&
-        insuranceType.value === "Full Insurance"
-    ) {
-        premium.value = "4500";
-    }
-
-    else if (
-        vehicleType.value === "4 Wheeler" &&
-        insuranceType.value === "Third Party"
-    ) {
-        premium.value = "6000";
-    }
-
-    else if (
-        vehicleType.value === "4 Wheeler" &&
-        insuranceType.value === "Full Insurance"
-    ) {
-        premium.value = "10000";
-    }
-
-    else {
+    } else if (vehicleType.value === "4 Wheeler") {
+        premium.value = "6500";
+    } else {
         premium.value = "";
     }
 }

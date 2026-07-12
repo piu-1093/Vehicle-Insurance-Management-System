@@ -59,6 +59,24 @@
                     placeholder="Search...">
             </div>
 
+            <div class="policy-search-container" style="display: flex; flex-direction: column; gap: 5px;">
+                <div class="search-box" style="width: auto; display: flex; align-items: center; border: 1px solid #ddd; padding: 16px 20px; border-radius: 15px; background: white;">
+                    <i class="fa-solid fa-file-invoice" style="font-size: 20px; color: #777;"></i>
+                    <input
+                        type="text"
+                        id="policySearchInput"
+                        placeholder="Search by Policy ID..."
+                        style="border: none; outline: none; font-size: 16px; width: 220px; margin-left: 12px;">
+                    <button 
+                        type="button" 
+                        id="policySearchBtn" 
+                        style="background: #17834d; color: white; border: none; padding: 8px 16px; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 14px; margin-left: 12px; transition: 0.3s;">
+                        Search
+                    </button>
+                </div>
+                <div id="policySearchError" style="color: red; font-size: 14px; font-weight: 600; display: none;"></div>
+            </div>
+
             <div class="filter-wrapper">
 
                 <button class="filter-btn" id="filterBtn">

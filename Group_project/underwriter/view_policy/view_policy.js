@@ -101,6 +101,68 @@ document.addEventListener("DOMContentLoaded", function () {
         policyBody.innerHTML += row;
     });
 
+    // Add a row for "No matching results found"
+    const noResultsRowHtml = `
+        <tr id="noResultsRow" style="display: none;">
+            <td colspan="12" style="text-align: center; color: var(--danger); font-weight: 600; padding: 20px;">
+                No matching policies found matching your search/filter criteria.
+            </td>
+        </tr>
+    `;
+    policyBody.innerHTML += noResultsRowHtml;
+
+    const searchInput = document.getElementById("policySearchInput");
+    const vehicleTypeFilter = document.getElementById("vehicleTypeFilter");
+    const insuranceTypeFilter = document.getElementById("insuranceTypeFilter");
+
+    function applyFilters() {
+        const query = searchInput.value.trim().toLowerCase();
+        const selectedVehicleType = vehicleTypeFilter.value;
+        const selectedInsuranceType = insuranceTypeFilter.value.toLowerCase();
+
+        const rows = document.querySelectorAll("#policyBody tr:not(#noResultsRow)");
+        let visibleCount = 0;
+
+        rows.forEach(row => {
+            if (row.cells.length > 1) {
+                const policyNo = row.cells[0].textContent.toLowerCase();
+                const vehicleType = row.cells[2].textContent;
+                const insuranceType = row.cells[7].textContent.toLowerCase();
+
+                const matchesSearch = policyNo.includes(query);
+                const matchesVehicle = selectedVehicleType === "" || vehicleType === selectedVehicleType;
+                
+                let matchesInsurance = false;
+                if (selectedInsuranceType === "") {
+                    matchesInsurance = true;
+                } else if (selectedInsuranceType === "third party") {
+                    matchesInsurance = insuranceType.includes("third") || insuranceType.includes("3rd");
+                } else {
+                    matchesInsurance = insuranceType.includes(selectedInsuranceType);
+                }
+
+                if (matchesSearch && matchesVehicle && matchesInsurance) {
+                    row.style.display = "";
+                    visibleCount++;
+                } else {
+                    row.style.display = "none";
+                }
+            }
+        });
+
+        const noResultsRow = document.getElementById("noResultsRow");
+        if (noResultsRow) {
+            if (visibleCount === 0) {
+                noResultsRow.style.display = "";
+            } else {
+                noResultsRow.style.display = "none";
+            }
+        }
+    }
+
+    searchInput.addEventListener("keyup", applyFilters);
+    vehicleTypeFilter.addEventListener("change", applyFilters);
+    insuranceTypeFilter.addEventListener("change", applyFilters);
 
 });
 

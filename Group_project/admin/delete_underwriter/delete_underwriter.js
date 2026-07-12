@@ -171,6 +171,7 @@ function showModal(title, message) {
         "none";
     document.getElementById("customModal").style.display =
         "flex";
+    document.getElementById("modalOk").onclick = null;
 }
 
 document
