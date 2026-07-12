@@ -233,12 +233,3 @@ document.querySelector(".back-btn").addEventListener(
         history.back();
     }
 );
-
-function toggleSidebar() {
-    document.querySelector(".sidebar")
-        .classList.toggle("hide");
-
-    document.querySelector(".main-content")
-        .classList.toggle("full");
-
-}
