@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const popup = document.getElementById('admin-popup');
     const closePopup = document.getElementById('close-popup');
-    forgotPasswordLink.style.pointerEvents = 'none';
-    forgotPasswordLink.style.opacity = '0.5';
-    forgotPasswordLink.style.cursor = 'not-allowed';
+    forgotPasswordLink.style.pointerEvents = 'auto';
+    forgotPasswordLink.style.opacity = '1';
+    forgotPasswordLink.style.cursor = 'pointer';
     // ---------------------------------------------------------
     // Application State Variables
     // ---------------------------------------------------------
